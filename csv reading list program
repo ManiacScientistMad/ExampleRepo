@@ -1,0 +1,25 @@
+code =[]
+name = []
+def read_csv(myFile):
+    with open(myFile,"r") as data_csv:
+        lines = data_csv.readlines()
+        return lines
+def parse_csv(x):
+    for i in x:
+            new_list = i.split(",")
+            name.append(new_list[0])
+            code.append(new_list[1])
+    return (name,code)
+
+def print_data(x,y):
+     for i in range(len(x)):
+        print ("--------")
+        print("code: " + code[i])
+        print("name: " + name[i])
+
+
+x = read_csv("program4/data.csv")
+
+y,z = parse_csv(x)
+
+print_data(y,z)
